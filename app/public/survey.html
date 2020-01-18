@@ -4,12 +4,31 @@
 		<title>FriendFinder</title>
 
 		<!-- Latest compiled and minified CSS & JS -->
+		<!-- bootstrap/css -->
 		<link
 			rel="stylesheet"
-			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
 		/>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<!-- bootstrap/js -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<!-- bootstrap popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<!-- bootstrap jquery -->
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+		></script>
 
 		<!-- Font Awesome Glyphicons -->
 		<link
@@ -22,7 +41,12 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css"
 		/>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+		<!-- jquery -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
 	</head>
 
 	<body>
@@ -39,7 +63,34 @@
 
 			<hr />
 
-			<h3><strong>Question 1</strong></h3>
+			<div class="dropdown">
+				<h1>Question 1</h1>
+				<label for="q1">
+					<h4>
+						Your mind is always buzzing with unexplored ideas and plans.
+					</h4></label
+				>
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					id="dropdownMenuButton"
+					data-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+				>
+					Answer
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" value="0">n/a</a>
+					<a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
+					<a class="dropdown-item" value="2">2</a>
+					<a class="dropdown-item" value="3">3</a>
+					<a class="dropdown-item" value="4">4</a>
+					<a class="dropdown-item" value="5">5 (Strongly Agree)</a>
+				</div>
+			</div>
+
+			<!-- <h3><strong>Question 1</strong></h3>
 			<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
 			<select class="chosen-select" id="q1" style="display: none;">
 				<option value=""></option>
@@ -57,75 +108,69 @@
 			>
 				<a class="chosen-single chosen-default"
 					><span>Select an Option</span>
-					<div><b></b></div
-				></a>
+
+				</a>
 				<div class="chosen-drop">
 					<div class="chosen-search">
 						<input type="text" autocomplete="off" />
 					</div>
 					<ul class="chosen-results"></ul>
 				</div>
-			</div>
+			</div> -->
 
-			<h3><strong>Question 2</strong></h3>
-			<h4>
-				Generally speaking, you rely more on your experience than your
-				imagination.
-			</h4>
-			<select class="chosen-select" id="q2" style="display: none;">
-				<option value=""></option>
-				<option value="1">1 (Strongly Disagree)</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5 (Strongly Agree)</option>
-			</select>
-			<div
-				class="chosen-container chosen-container-single"
-				style="width: 155px;"
-				title=""
-				id="q2_chosen"
-			>
-				<a class="chosen-single chosen-default"
-					><span>Select an Option</span>
-					<div><b></b></div
-				></a>
-				<div class="chosen-drop">
-					<div class="chosen-search">
-						<input type="text" autocomplete="off" />
-					</div>
-					<ul class="chosen-results"></ul>
+			<div class="dropdown">
+				<h1>Question 2</h1>
+				<label for="q1">
+					<h4>
+						Generally speaking, you rely more on your experience than your
+						imagination.
+					</h4></label
+				>
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					id="dropdownMenuButton"
+					data-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+				>
+					Answer
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" value="0">n/a</a>
+					<a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
+					<a class="dropdown-item" value="2">2</a>
+					<a class="dropdown-item" value="3">3</a>
+					<a class="dropdown-item" value="4">4</a>
+					<a class="dropdown-item" value="5">5 (Strongly Agree)</a>
 				</div>
 			</div>
 
-			<h3><strong>Question 3</strong></h3>
-			<h4>
-				You find it easy to stay relaxed and focused even when there is some
-				pressure.
-			</h4>
-			<select class="chosen-select" id="q3" style="display: none;">
-				<option value=""></option>
-				<option value="1">1 (Strongly Disagree)</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5 (Strongly Agree)</option>
-			</select>
-			<div
-				class="chosen-container chosen-container-single"
-				style="width: 155px;"
-				title=""
-				id="q3_chosen"
-			>
-				<a class="chosen-single chosen-default"
-					><span>Select an Option</span>
-					<div><b></b></div
-				></a>
-				<div class="chosen-drop">
-					<div class="chosen-search">
-						<input type="text" autocomplete="off" />
-					</div>
-					<ul class="chosen-results"></ul>
+			<div class="dropdown">
+				<h1>Question 3</h1>
+				<label for="q1">
+					<h4>
+						You find it easy to stay relaxed and focused even when there is some
+						pressure.
+					</h4></label
+				>
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					id="dropdownMenuButton"
+					data-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+				>
+					Answer
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" value="0">n/a</a>
+					<a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
+					<a class="dropdown-item" value="2">2</a>
+					<a class="dropdown-item" value="3">3</a>
+					<a class="dropdown-item" value="4">4</a>
+					<a class="dropdown-item" value="5">5 (Strongly Agree)</a>
 				</div>
 			</div>
 
@@ -421,7 +466,7 @@
 						}
 					});
 
-					$(".chosen-select").each(function() {
+					$(".chosen-single").each(function() {
 						if ($(this).val() === "") {
 							isValid = false;
 						}
