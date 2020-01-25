@@ -1,75 +1,40 @@
-// Dependencies
-// =============================================================
-var express = require("express");
-var path = require("path");
-require('dotenv').config()
-// Sets up the Express App
-// =============================================================
-var app = express();
-var PORT = 3000;
+// ==============================================================================
+// DEPENDENCIES
+// Series of npm packages that we will use to give our server useful functionality
+// ==============================================================================
 
-// Sets up the Express app to handle data parsing
+var express = require("express");
+
+// ==============================================================================
+// EXPRESS CONFIGURATION
+// This sets up the basic properties for our express server
+// ==============================================================================
+
+// Tells node that we are creating an "express" server
+var app = express();
+
+// Sets an initial port. We"ll use this later in our listener
+var PORT = process.env.PORT || 3000;
+
+// express.json and express.urlEncoded make it easy for our server to interpret data sent to it.
+// The code below is pretty standard.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// ================================================================================
+// ROUTER
+// The below points our server to a series of "route" files.
+// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
+// ================================================================================
 
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
-// Routes
-// =============================================================
+// ==============================================================================
+// LISTENER
+// The below code effectively "starts" our server
+// ==============================================================================
 
-app.get("/", function (req, res)
-{
-  res.sendFile(path.join(__dirname, "app/public/view.html"));
-});
-
-app.get("/survey", function (req, res)
-{
-  res.sendFile(path.join(__dirname, "app/public/survey.html"));
-});
-
-// Displays all characters
-app.get("/api/characters", function (req, res)
-{
-  return res.json(characters);
-});
-
-// Displays a single character, or returns false
-app.get("/api/characters/:character", function (req, res)
-{
-  var chosen = req.params.character;
-
-  console.log(chosen);
-
-  for (var i = 0; i < characters.length; i++) {
-    if (chosen === characters[i].routeName) {
-      return res.json(characters[i]);
-    }
-  }
-
-  return res.json(false);
-});
-
-// Create New Characters - takes in JSON input
-app.post("/api/characters", function (req, res)
-{
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  var newCharacter = req.body;
-
-  // Using a RegEx Pattern to remove spaces from newCharacter
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
-
-  console.log(newCharacter);
-
-  characters.push(newCharacter);
-
-  res.json(newCharacter);
-});
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function ()
-{
-  console.log("App listening on PORT " + PORT);
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
 });
